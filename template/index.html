@@ -1,0 +1,56 @@
+<html>
+<title>{%block title%}Travel Management System {%block endblock%}</title>
+  <head>
+
+    
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <script src = "{{url_for('static',filename='js/alert.js')}}"></script>
+    <script src = "{{url_for('static',filename='js/login.js')}}"></script>
+
+    <body background-color:"red">
+
+    {%block content%}
+
+        <div class="container">
+        <h1>Welcome to Travel Managment System</h1>
+        <h2>Travel system is good</h2>
+
+        <button id="button1"onclick="handleclick()">click me</button>
+        <button id="button2" onclick="nextpage()">Next Page</button>
+        <button id="button3" type="button" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="container2">
+            <h1>Welcome to the bottom layer</h1>
+        </div>
+
+        <div class="container">
+            <h1>Welcome to my website</h1>
+            <p>Here's some content about my website.</p>
+            <ul>
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+            </ul>
+          </div>
+
+          <div class="container">
+            <h1>Welcome to my website</h1>
+            <p>Here's some content about my website.</p>
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+              
+          </div>
+      {%endblock%}
+
+
+
+
+          
+          
+</body>
+</head>
+</html>

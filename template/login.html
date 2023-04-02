@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    {%block content %}
+
+        <title>{%block title %} Login Page {% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/login.css')}}"/>
+        <script src = "{{url_for('static',filename='js/login.js')}}"></script>
+       
+        <h1>Travel and Management </h1>
+        <h2>User Login Page</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <br>
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" required><br>
+            <br>
+            <button id="button2" type="button" onclick="login()">Login</button>
+        </form>
+
+    {%endblock%}
+
+    </head>
+
+</html>
