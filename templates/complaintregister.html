@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Packages</title>
+  <style>
+    /* Style for travel package page */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 0 10px;
+    }
+
+    .packages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+    }
+
+    .package {
+      box-shadow: 0px 0px 10px #ccc;
+      margin: 10px;
+      width: 300px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .package:hover {
+      box-shadow: 0px 0px 20px #ccc;
+    }
+
+    .package img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .package h2 {
+      margin: 10px 0;
+      font-size: 20px;
+    }
+
+    .package p {
+      margin: 5px 0;
+    }
+
+    .package button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .package button:hover {
+      background-color: #555;
+      color: #333;
+    }
+  </style>
+  <style>
+    /* Define the styles for the table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 200px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #dddddd;
+    }
+    /* Define the styles for the border layout */
+    .border-layout {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .border-layout > * {
+      flex: 1 1 0;
+      padding: 10px;
+    }
+    .border-layout > .center {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+    /* Define the styles for centering the border layout */
+    .centered {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <style>
+  body {
+    background-image: url("/static/img/dbimage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+  <html>
+    <body>
+        <div class="header">
+            <h1>Admin</h1>
+            <a href="{{url_for('adminusers')}}">Users</a>
+            <a href="{{url_for('adminbook')}}">Bookings</a>
+            <a href="{{url_for('admincomplaint')}}">Complaints</a>
+            <a href="{{url_for('logout')}}">Logout</a>
+          </div>
+          <div class="centered">
+            <div class="border-layout">
+            <div class="top"></div>
+            <div class="left"></div>
+            <div class="center">
+          <h1>Complaint Details</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Complaint ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Complaint Type</th>
+                <th>Complaint</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for comp in complaint %}
+              <tr>
+                <td>{{ comp.com_id }}</td>
+                <td>{{ comp.name }}</td>
+                <td>{{ comp.email }}</td>
+                <td>{{ comp.complainttype }}</td>
+                <td>{{ comp.complaint }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          </div>
+    </body>
+  </html>
